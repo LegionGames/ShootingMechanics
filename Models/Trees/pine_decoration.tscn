@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://drh4tthkuv00k"]
+
+[ext_resource type="PackedScene" uid="uid://60ddfr3sfp87" path="res://Models/Trees/pine.glb" id="1_cyaux"]
+[ext_resource type="Material" uid="uid://biinxk6d6e72u" path="res://Models/Trees/green_1.tres" id="2_pwrsi"]
+[ext_resource type="Material" uid="uid://cqqiwob0fubmc" path="res://Models/Trees/green_2.tres" id="3_52dkv"]
+[ext_resource type="Material" uid="uid://dqrf6gnqcac0k" path="res://Models/Trees/brown_1.tres" id="4_bdhsh"]
+
+[node name="pine" instance=ExtResource("1_cyaux")]
+
+[node name="pine2" parent="." index="0"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_pwrsi")
+surface_material_override/1 = ExtResource("3_52dkv")
+surface_material_override/2 = ExtResource("4_bdhsh")

@@ -1,0 +1,56 @@
+[gd_scene load_steps=11 format=3 uid="uid://bqpwh2qhltcpn"]
+
+[ext_resource type="PackedScene" uid="uid://beylmx8mc8h0i" path="res://Models/SteampunkGun/Steampunk Rifle.glb" id="1_3vau2"]
+[ext_resource type="Material" uid="uid://bds863cq6gruq" path="res://Models/SteampunkGun/Metal.tres" id="2_guumd"]
+[ext_resource type="Material" uid="uid://dsbxaujpenxuh" path="res://Models/SteampunkGun/Metal3.tres" id="2_sebp6"]
+[ext_resource type="Material" uid="uid://bi0jeon1tbvt0" path="res://Models/SteampunkGun/Wood.tres" id="3_d42oy"]
+[ext_resource type="Material" uid="uid://c5ekpv1qstkft" path="res://Models/SteampunkGun/Metal2.tres" id="4_05je0"]
+[ext_resource type="Material" uid="uid://dulfbj71v4s8a" path="res://Models/SteampunkGun/Gem.tres" id="4_l3umg"]
+[ext_resource type="Material" uid="uid://borfcqmqsctyn" path="res://Models/SteampunkGun/Copper2.tres" id="5_dvdme"]
+[ext_resource type="Material" uid="uid://cn1p8sjrg3vfy" path="res://Models/SteampunkGun/Copper.tres" id="5_ua4i0"]
+
+[sub_resource type="Animation" id="Animation_yh62p"]
+resource_name = "Shoot"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.05), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kvmkc"]
+_data = {
+"Shoot": SubResource("Animation_yh62p")
+}
+
+[node name="Rifle" instance=ExtResource("1_3vau2")]
+
+[node name="Node" parent="." index="0"]
+cast_shadow = 0
+surface_material_override/0 = ExtResource("2_sebp6")
+surface_material_override/1 = ExtResource("3_d42oy")
+surface_material_override/2 = ExtResource("2_guumd")
+surface_material_override/3 = ExtResource("4_05je0")
+surface_material_override/4 = ExtResource("4_05je0")
+surface_material_override/5 = ExtResource("4_l3umg")
+surface_material_override/6 = ExtResource("4_l3umg")
+surface_material_override/7 = ExtResource("4_l3umg")
+surface_material_override/8 = ExtResource("5_dvdme")
+surface_material_override/9 = ExtResource("5_ua4i0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_kvmkc")
+}
+
+[node name="RayCast3D" type="RayCast3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0212774, -0.575374)
+target_position = Vector3(0, 0, -1)

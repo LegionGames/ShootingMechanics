@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjt637xgdta41"]
+
+[ext_resource type="PackedScene" uid="uid://co35tu4v314bv" path="res://Models/Trees/pineCrooked.glb" id="1_x2s4l"]
+[ext_resource type="Material" uid="uid://cqqiwob0fubmc" path="res://Models/Trees/green_2.tres" id="2_8swf5"]
+[ext_resource type="Material" uid="uid://biinxk6d6e72u" path="res://Models/Trees/green_1.tres" id="3_noahx"]
+[ext_resource type="Material" uid="uid://dqrf6gnqcac0k" path="res://Models/Trees/brown_1.tres" id="4_hjnuy"]
+
+[node name="pineCrooked" instance=ExtResource("1_x2s4l")]
+
+[node name="pineCrooked2" parent="." index="0"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_8swf5")
+surface_material_override/1 = ExtResource("3_noahx")
+surface_material_override/2 = ExtResource("4_hjnuy")

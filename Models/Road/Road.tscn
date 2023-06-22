@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfukgfktytrcy"]
+
+[ext_resource type="PackedScene" uid="uid://dsjsqpq8xf6so" path="res://Models/Road/road.glb" id="1_v5xj7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hcei4"]
+albedo_color = Color(0.223529, 0.223529, 0.180392, 1)
+
+[node name="road" instance=ExtResource("1_v5xj7")]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="road2" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_hcei4")

@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://5iurrb07epis"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_ueh2c"]
+[ext_resource type="PackedScene" uid="uid://bqpwh2qhltcpn" path="res://Scenes/Rifle.tscn" id="2_kpw2n"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xc2g5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sbgyl"]
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
+floor_max_angle = 1.0472
+script = ExtResource("1_ueh2c")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_xc2g5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_sbgyl")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, -2.84217e-14, 0, 1, -9.59255e-28, 2.84217e-14, 9.59255e-28, 1, 0, 0, 0)
+current = true
+
+[node name="Rifle" parent="Head/Camera3D" instance=ExtResource("2_kpw2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.270765, -0.266362, -0.542779)
+
+[node name="Rifle2" parent="Head/Camera3D" instance=ExtResource("2_kpw2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.271, -0.266, -0.543)
